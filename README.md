@@ -1,5 +1,5 @@
 # DevOps_Practice
 The purpose of this repository is to store and track my DevOps learnings .
 
-Linux Skill Up Challenge
+Linux Skill Up Challenge</br>
 Day 1- SSH command
