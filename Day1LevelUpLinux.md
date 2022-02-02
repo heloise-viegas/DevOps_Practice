@@ -14,15 +14,15 @@ PS: This was posted a month ago on Reddit. Not sure how this works but my goal i
 1) Configure and run server on CentOS VM
    Login to CentOS.
    Commands Used :
-   i)sudo yum install openssh
-   used to install openssh on your VM (here we need to install the openssh server)
-   ii)sudo systemctl status sshd
+   -sudo yum install openssh
+    used to install openssh on your VM (here we need to install the openssh server)
+   -sudo systemctl status sshd
      used to check is ssh is running
-   iii)sudo systemctl start sshd
+   -sudo systemctl start sshd
      used to start the ssh service
-   iv)sudo systemctl stop sshd
+   -sudo systemctl stop sshd
      used to stop the ssh service
-   v)ip a
+   -ip a
      used to get IP address of the VM
 
 2) Connect to VM server via Ubuntu
