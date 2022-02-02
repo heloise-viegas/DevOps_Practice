@@ -1,4 +1,4 @@
-######linux skill up challenge
+<!--linux skill up challenge-->
 
 #### Day 1 - Linux Skill Up Challenge
 
@@ -57,7 +57,7 @@ CentOs VM was running on Host Only Network mode</br>
 Solution :-</br>
 Change network settings to NAT mode</br>
 
-**Resources**:- 
+**Resources**:-</br>
 1)https://www.reddit.com/r/linuxupskillchallenge/comments/rugjxr/day_1_get_to_know_your_server/</br>
 2)https://www.cyberciti.biz/faq/how-to-install-ssh-on-ubuntu-linux-using-apt-get/</br>
 3)https://linuxhint.com/enable_ssh_centos8/</br>
