@@ -31,21 +31,13 @@ test</br>
 [osboxes@osboxes test]$ ls -a</br>
 .  ..  demo.txt</br>
 [osboxes@osboxes test]$ cat > places.txt</br>
-USA
-Dubai
-India
-UK
-^C
+USA Dubai India UK 
 [osboxes@osboxes test]$ cat places.txt</br>
-USA
-Dubai
-India
-UK</br>
+USA Dubai India UK</br>
 [osboxes@osboxes test]$ grep -i "bai" places.txt</br>
 Dubai</br>
 [osboxes@osboxes test]$ grep -i "i" places.txt | tr a-z A-Z</br>
-DUBAI
-INDIA</br>
+DUBAI INDIA</br>
 [osboxes@osboxes test]$ pushd ~/</br>
 ~ ~/test</br>
 [osboxes@osboxes ~]$ pwd</br>
