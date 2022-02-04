@@ -1,0 +1,173 @@
+heloise@DESKTOP-P5D1DV6:~$ ssh osboxes@192.168.31.27
+osboxes@192.168.31.27's password:
+Activate the web console with: systemctl enable --now cockpit.socket
+
+Last login: Fri Feb  4 05:00:24 2022
+[osboxes@osboxes ~]$ ls -al
+total 20
+drwx------. 2 osboxes osboxes  99 Jan 30 10:06 .
+drwxr-xr-x. 3 root    root     21 Jun 19  2021 ..
+-rw-------. 1 osboxes osboxes 138 Jan 30 10:43 .bash_history
+-rw-r--r--. 1 osboxes osboxes  18 Jan 12  2021 .bash_logout
+-rw-r--r--. 1 osboxes osboxes 141 Jan 12  2021 .bash_profile
+-rw-r--r--. 1 osboxes osboxes 376 Jan 12  2021 .bashrc
+-rw-rw-r--. 1 osboxes osboxes  42 Jan 30 03:01 demo.txt
+[osboxes@osboxes ~]$ pwd
+/home/osboxes
+[osboxes@osboxes ~]$ mkdir test
+[osboxes@osboxes ~]$ ls
+demo.txt  test
+[osboxes@osboxes ~]$ mv demo.txt test
+[osboxes@osboxes ~]$ ls
+test
+[osboxes@osboxes ~]$ cd test
+[osboxes@osboxes test]$ pwd
+/home/osboxes/test
+[osboxes@osboxes test]$ ls -a
+.  ..  demo.txt
+[osboxes@osboxes test]$ cat > places.txt
+USA
+Dubai
+India
+UK
+^C
+[osboxes@osboxes test]$ cat places.txt
+USA
+Dubai
+India
+UK
+[osboxes@osboxes test]$ grep -i "bai" places.txt
+Dubai
+[osboxes@osboxes test]$ grep -i "i" places.txt | tr a-z A-Z
+DUBAI
+INDIA
+[osboxes@osboxes test]$ pushd ~/
+~ ~/test
+[osboxes@osboxes ~]$ pwd
+/home/osboxes
+[osboxes@osboxes ~]$ pushed test
+-bash: pushed: command not found
+[osboxes@osboxes ~]$ pushd ~/test
+~/test ~ ~/test
+[osboxes@osboxes test]$ popd
+~ ~/test
+[osboxes@osboxes ~]$ pwd
+/home/osboxes
+[osboxes@osboxes ~]$ dirs -v
+ 0  ~
+ 1  ~/test
+[osboxes@osboxes ~]$ pwd
+/home/osboxes
+[osboxes@osboxes ~]$ ls
+test
+[osboxes@osboxes ~]$ man pushd
+[osboxes@osboxes ~]$ pushd test
+~/test ~ ~/test
+[osboxes@osboxes test]$ mkdir insidetest
+[osboxes@osboxes test]$ pushd insidetest
+~/test/insidetest ~/test ~ ~/test
+[osboxes@osboxes insidetest]$ pwd
+/home/osboxes/test/insidetest
+[osboxes@osboxes insidetest]$ mkdir final
+[osboxes@osboxes insidetest]$ pushd ~
+~ ~/test/insidetest ~/test ~ ~/test
+[osboxes@osboxes ~]$ pwd
+/home/osboxes
+[osboxes@osboxes ~]$ dir -v
+test
+[osboxes@osboxes ~]$ popd
+~/test/insidetest ~/test ~ ~/test
+[osboxes@osboxes insidetest]$ dir -v
+final
+[osboxes@osboxes insidetest]$ popd
+~/test ~ ~/test
+[osboxes@osboxes test]$ dir -v
+demo.txt  insidetest  places.txt
+[osboxes@osboxes test]$ popd
+~ ~/test
+[osboxes@osboxes ~]$ popd
+~/test
+[osboxes@osboxes test]$ popd
+-bash: popd: directory stack empty
+[osboxes@osboxes test]$ pwd
+/home/osboxes/test
+[osboxes@osboxes test]$ pushd final
+-bash: pushd: final: No such file or directory
+[osboxes@osboxes test]$ pushd test
+-bash: pushd: test: No such file or directory
+[osboxes@osboxes test]$ popd
+-bash: popd: directory stack empty
+[osboxes@osboxes test]$ pushd insidetest
+~/test/insidetest ~/test
+[osboxes@osboxes insidetest]$ popd
+~/test
+[osboxes@osboxes test]$ popd
+-bash: popd: directory stack empty
+[osboxes@osboxes test]$ pushd insidetest/final
+~/test/insidetest/final ~/test
+[osboxes@osboxes final]$ popd
+~/test
+[osboxes@osboxes test]$ popd
+-bash: popd: directory stack empty
+[osboxes@osboxes test]$ history
+    1  ls
+    2  cat demo.txt
+    3  uptime
+    4  free -h
+    5  df -h
+    6  uname -a
+    7  free -g
+    8  ls -al
+    9  cat demo.txt
+   10  uptime
+   11  df -h
+   12  uname -a
+   13  history
+   14  sudo apt-get install openssh
+   15  exit
+   16  ls -al
+   17  pwd
+   18  mkdir test
+   19  ls
+   20  mv demo.txt test
+   21  ls
+   22  cd test
+   23  pwd
+   24  ls -a
+   25  cat > places.txt
+   26  cat places.txt
+   27  grep -i "bai" places.txt
+   28  grep -i "i" places.txt | tr a-z A-Z
+   29  pushd ~/
+   30  pwd
+   31  pushed test
+   32  pushd ~/test
+   33  popd
+   34  pwd
+   35  dirs -v
+   36  pwd
+   37  ls
+   38  man pushd
+   39  pushd test
+   40  mkdir insidetest
+   41  pushd insidetest
+   42  pwd
+   43  mkdir final
+   44  pushd ~
+   45  pwd
+   46  dir -v
+   47  popd
+   48  dir -v
+   49  popd
+   50  dir -v
+   51  popd
+   52  pwd
+   53  pushd final
+   54  pushd test
+   55  popd
+   56  pushd insidetest
+   57  popd
+   58  pushd insidetest/final
+   59  popd
+   60  history
+[osboxes@osboxes test]$
