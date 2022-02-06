@@ -17,11 +17,11 @@ PS: This was posted a month ago on Reddit. Not sure how this works but my goal i
    i)ssh james@192.145.87.21</br>
    
 Operations performed on Remote Server</br>
-**-shadow file stores hashed passwords**<br/>
+**shadow file stores hashed passwords**<br/>
 [osboxes@osboxes ~]$ sudo cat /etc/shadow<br/>
 
 **reboot server**<br/>
-[osboxes@osboxes ~]$ sudo reboot<br/>
+[osboxes@osboxes ]$ sudo reboot<br/>
 Connection to 192.168.85.56 ended by remote host.<br/>
 Connection to 192.168.85.56 ended.<br/>
 heloise@DESKTOP-P5D1DV6:~$ ssh osboxes@192.168.85.56<br/>
