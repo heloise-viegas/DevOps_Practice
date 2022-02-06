@@ -111,4 +111,4 @@ demo.txt  insidetest  places.txt</br>
 
 **Resources**:-</br>
 1)https://www.reddit.com/r/linuxupskillchallenge/comments/raesp8/day_2_basic_navigation/</br>
-2)https://www.tecmint.com/pushd-and-popd-linux-filesystem-navigation/</br>
+2)https://www.tecmint.com/pushd-and-popd-linux-filesystem-navigation/
