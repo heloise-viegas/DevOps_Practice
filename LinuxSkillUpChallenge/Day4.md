@@ -23,6 +23,8 @@ ii)[osboxes@osboxes ~]$ sudo dnf install mc<br/>
 iii)[osboxes@osboxes ~]$ mc   </br>
 this runs the software
 
+**Issues**
+https://stackoverflow.com/questions/70926799/centos-through-vm-no-urls-in-mirrorlist
 
 **Resources**:-</br>
 1)https://www.reddit.com/r/linuxupskillchallenge/comments/rwu91s/day_4_installing_software_exploring_the_file/</br>
