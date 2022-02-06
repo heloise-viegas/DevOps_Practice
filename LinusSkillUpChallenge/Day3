@@ -1,0 +1,758 @@
+Welcome to Ubuntu 20.04 LTS (GNU/Linux 4.4.0-19041-Microsoft x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/advantage
+
+  System information as of Sat Feb  5 11:41:32 IST 2022
+
+  System load:    0.52      Users logged in:        0
+  Usage of /home: unknown   IPv4 address for eth1:  192.168.114.1
+  Memory usage:   63%       IPv4 address for eth2:  192.168.192.1
+  Swap usage:     0%        IPv4 address for wifi0: 192.168.31.140
+  Processes:      7
+
+0 updates can be installed immediately.
+0 of these updates are security updates.
+
+
+The list of available updates is more than a week old.
+To check for new updates run: sudo apt update
+
+
+This message is shown once once a day. To disable it please create the
+/home/heloise/.hushlogin file.
+heloise@DESKTOP-P5D1DV6:~$ ssh osboxes@192.168.31.27
+osboxes@192.168.31.27's password:
+Activate the web console with: systemctl enable --now cockpit.socket
+
+Last login: Sat Feb  5 01:10:12 2022
+[osboxes@osboxes ~]$ ls -l
+total 0
+drwxrwxr-x. 3 osboxes osboxes 58 Feb  4 08:23 test
+[osboxes@osboxes ~]$ pushd /etc/shadow
+-bash: pushd: /etc/shadow: Not a directory
+[osboxes@osboxes ~]$ sudo pushd /etc
+[sudo] password for osboxes:
+sudo: pushd: command not found
+[osboxes@osboxes ~]$ cd ~/etc
+-bash: cd: /home/osboxes/etc: No such file or directory
+[osboxes@osboxes ~]$ sudo cat etc/shadow
+cat: etc/shadow: No such file or directory
+[osboxes@osboxes ~]$ pwd
+/home/osboxes
+[osboxes@osboxes ~]$ sudo cat /etc/shadow
+root:$6$l1HQ724LUxBmjvLz$6/R0kNiEFYDitBLFhsqLxXq0U02JWqcbrJLkqO4Dta0XWgvSj/R36yhrmik2IS3RxHBC6J53w1K8oY97jMXZX.::0:99999:7:::
+bin:*:18397:0:99999:7:::
+daemon:*:18397:0:99999:7:::
+adm:*:18397:0:99999:7:::
+lp:*:18397:0:99999:7:::
+sync:*:18397:0:99999:7:::
+shutdown:*:18397:0:99999:7:::
+halt:*:18397:0:99999:7:::
+mail:*:18397:0:99999:7:::
+operator:*:18397:0:99999:7:::
+games:*:18397:0:99999:7:::
+ftp:*:18397:0:99999:7:::
+nobody:*:18397:0:99999:7:::
+dbus:!!:18797::::::
+systemd-coredump:!!:18797::::::
+systemd-resolve:!!:18797::::::
+tss:!!:18797::::::
+polkitd:!!:18797::::::
+libstoragemgmt:!!:18797::::::
+unbound:!!:18797::::::
+setroubleshoot:!!:18797::::::
+cockpit-ws:!!:18797::::::
+cockpit-wsinstance:!!:18797::::::
+sssd:!!:18797::::::
+clevis:!!:18797::::::
+chrony:!!:18797::::::
+sshd:!!:18797::::::
+tcpdump:!!:18797::::::
+osboxes:$6$ImCfoTxI5/iCPz5T$QqcVJu07mIZFUgS4UjBgKOljufaD3F3KiVP2TfFGOSkOw3ZTWXQJXwBuddmFPZY8v2BTPe6bC4A4pETQNgCHe/::0:99999:7:::
+[osboxes@osboxes ~]$ sudo ls -l /etc/shadow
+----------. 1 root root 950 Jun 19  2021 /etc/shadow
+[osboxes@osboxes ~]$ sudo less /etc/shadow
+[osboxes@osboxes ~]$ reboot
+Failed to set wall message, ignoring: Interactive authentication required.
+Failed to reboot system via logind: Interactive authentication required.
+Failed to open initctl fifo: Permission denied
+Failed to talk to init daemon.
+[osboxes@osboxes ~]$ sudo reboot
+Connection to 192.168.31.27 closed by remote host.
+Connection to 192.168.31.27 closed.
+heloise@DESKTOP-P5D1DV6:~$ ssh osboxes@192.168.31.27
+ssh: connect to host 192.168.31.27 port 22: Resource temporarily unavailable
+heloise@DESKTOP-P5D1DV6:~$ ssh osboxes@192.168.31.27
+osboxes@192.168.31.27's password:
+Activate the web console with: systemctl enable --now cockpit.socket
+
+Last login: Sat Feb  5 01:24:00 2022
+[osboxes@osboxes ~]$ uptime
+ 01:25:12 up 1 min,  2 users,  load average: 0.14, 0.10, 0.04
+[osboxes@osboxes ~]$ sudo -i
+[sudo] password for osboxes:
+[root@osboxes ~]# nano /etc/shadow
+[root@osboxes ~]# exit
+logout
+[osboxes@osboxes ~]$ less /var/log/auth.log
+/var/log/auth.log: No such file or directory
+[osboxes@osboxes ~]$ less
+Missing filename ("less --help" for help)
+[osboxes@osboxes ~]$ man less
+[osboxes@osboxes ~]$ cat /var/log/auth.log
+cat: /var/log/auth.log: No such file or directory
+[osboxes@osboxes ~]$ cd /var/log
+[osboxes@osboxes log]$ less auth.log
+auth.log: No such file or directory
+[osboxes@osboxes log]$ ls -l
+total 1932
+drwxr-xr-x. 2 root   root      4096 Jun 19  2021 anaconda
+drwx------. 2 root   root        23 Jun 19  2021 audit
+-rw-------. 1 root   root     16484 Feb  5 01:23 boot.log
+-rw-------. 1 root   root     83331 Jan 15 12:41 boot.log-20220115
+-rw-------. 1 root   root     25796 Jan 30 03:28 boot.log-20220130
+-rw-------. 1 root   root     38725 Feb  4 08:33 boot.log-20220204
+-rw-rw----. 1 root   utmp         0 Feb  4 08:33 btmp
+-rw-rw----. 1 root   utmp       768 Feb  3 10:17 btmp-20220204
+drwxr-xr-x. 2 chrony chrony       6 Mar  2  2021 chrony
+-rw-------. 1 root   root      6631 Feb  5 01:23 cron
+-rw-------. 1 root   root      7625 Jan 30 03:28 cron-20220130
+-rw-r--r--. 1 root   root     14797 Feb  4 10:06 dnf.librepo.log
+-rw-r--r--. 1 root   root     34363 Feb  4 10:06 dnf.log
+-rw-r--r--. 1 root   root      1598 Feb  4 10:06 dnf.rpm.log
+-rw-r-----. 1 root   root      3720 Feb  5 01:23 firewalld
+-rw-r--r--. 1 root   root       180 Feb  4 08:30 hawkey.log
+-rw-r--r--. 1 root   root       420 Jan 30 03:01 hawkey.log-20220130
+-rw-r--r--. 1 root   root     15236 Feb  5 01:23 kdump.log
+-rw-rw-r--. 1 root   utmp    292292 Feb  5 01:25 lastlog
+-rw-------. 1 root   root         0 Jan 30 03:28 maillog
+-rw-------. 1 root   root         0 Jun 19  2021 maillog-20220130
+-rw-------. 1 root   root    532681 Feb  5 01:26 messages
+-rw-------. 1 root   root   1040157 Jan 30 03:01 messages-20220130
+drwx------. 2 root   root         6 Jun 19  2021 private
+drwx------. 3 root   root        17 Jun 19  2021 samba
+-rw-------. 1 root   root     26762 Feb  5 01:27 secure
+-rw-------. 1 root   root     12267 Jan 30 02:30 secure-20220130
+-rw-------. 1 root   root         0 Jan 30 03:28 spooler
+-rw-------. 1 root   root         0 Jun 19  2021 spooler-20220130
+drwxr-x---. 2 sssd   sssd       167 Jan 30 03:28 sssd
+drwxr-xr-x. 2 root   root        23 Jun 19  2021 tuned
+-rw-rw-r--. 1 root   utmp     51456 Feb  5 01:25 wtmp
+[osboxes@osboxes log]$ ls -al
+total 1940
+drwxr-xr-x.  9 root   root      4096 Feb  4 08:33 .
+drwxr-xr-x. 21 root   root      4096 Jun 19  2021 ..
+drwxr-xr-x.  2 root   root      4096 Jun 19  2021 anaconda
+drwx------.  2 root   root        23 Jun 19  2021 audit
+-rw-------.  1 root   root     16484 Feb  5 01:23 boot.log
+-rw-------.  1 root   root     83331 Jan 15 12:41 boot.log-20220115
+-rw-------.  1 root   root     25796 Jan 30 03:28 boot.log-20220130
+-rw-------.  1 root   root     38725 Feb  4 08:33 boot.log-20220204
+-rw-rw----.  1 root   utmp         0 Feb  4 08:33 btmp
+-rw-rw----.  1 root   utmp       768 Feb  3 10:17 btmp-20220204
+drwxr-xr-x.  2 chrony chrony       6 Mar  2  2021 chrony
+-rw-------.  1 root   root      6631 Feb  5 01:23 cron
+-rw-------.  1 root   root      7625 Jan 30 03:28 cron-20220130
+-rw-r--r--.  1 root   root     14797 Feb  4 10:06 dnf.librepo.log
+-rw-r--r--.  1 root   root     34363 Feb  4 10:06 dnf.log
+-rw-r--r--.  1 root   root      1598 Feb  4 10:06 dnf.rpm.log
+-rw-r-----.  1 root   root      3720 Feb  5 01:23 firewalld
+-rw-r--r--.  1 root   root       180 Feb  4 08:30 hawkey.log
+-rw-r--r--.  1 root   root       420 Jan 30 03:01 hawkey.log-20220130
+-rw-r--r--.  1 root   root     15236 Feb  5 01:23 kdump.log
+-rw-rw-r--.  1 root   utmp    292292 Feb  5 01:25 lastlog
+-rw-------.  1 root   root         0 Jan 30 03:28 maillog
+-rw-------.  1 root   root         0 Jun 19  2021 maillog-20220130
+-rw-------.  1 root   root    532681 Feb  5 01:26 messages
+-rw-------.  1 root   root   1040157 Jan 30 03:01 messages-20220130
+drwx------.  2 root   root         6 Jun 19  2021 private
+drwx------.  3 root   root        17 Jun 19  2021 samba
+-rw-------.  1 root   root     26762 Feb  5 01:27 secure
+-rw-------.  1 root   root     12267 Jan 30 02:30 secure-20220130
+-rw-------.  1 root   root         0 Jan 30 03:28 spooler
+-rw-------.  1 root   root         0 Jun 19  2021 spooler-20220130
+drwxr-x---.  2 sssd   sssd       167 Jan 30 03:28 sssd
+drwxr-xr-x.  2 root   root        23 Jun 19  2021 tuned
+-rw-rw-r--.  1 root   utmp     51456 Feb  5 01:25 wtmp
+[osboxes@osboxes log]$ less boot.log
+boot.log: Permission denied
+[osboxes@osboxes log]$ sudo less boot.log
+[sudo] password for osboxes:
+"boot.log" may be a binary file.  See it anyway?
+[osboxes@osboxes log]$ sudo less audit
+audit is a directory
+[osboxes@osboxes log]$ cd audit
+-bash: cd: audit: Permission denied
+[osboxes@osboxes log]$ sudo cd audit
+[osboxes@osboxes log]$ pwd
+/var/log
+[osboxes@osboxes log]$ sudo cd /audit
+/bin/cd: line 2: cd: /audit: No such file or directory
+[osboxes@osboxes log]$ cd ..
+[osboxes@osboxes var]$ cd ~
+[osboxes@osboxes ~]$ pwd
+/home/osboxes
+[osboxes@osboxes ~]$ sudo nano /var/log/auth.log
+[sudo] password for osboxes:
+[osboxes@osboxes ~]$ sudo nano /var/log/audit/auth.log
+[osboxes@osboxes ~]$ sudo cd /etc/sudoers
+/bin/cd: line 2: cd: /etc/sudoers: Not a directory
+[osboxes@osboxes ~]$ sudo cat /etc/sudoers
+## Sudoers allows particular users to run various commands as
+## the root user, without needing the root password.
+##
+## Examples are provided at the bottom of the file for collections
+## of related commands, which can then be delegated out to particular
+## users or groups.
+##
+## This file must be edited with the 'visudo' command.
+
+## Host Aliases
+## Groups of machines. You may prefer to use hostnames (perhaps using
+## wildcards for entire domains) or IP addresses instead.
+# Host_Alias     FILESERVERS = fs1, fs2
+# Host_Alias     MAILSERVERS = smtp, smtp2
+
+## User Aliases
+## These aren't often necessary, as you can use regular groups
+## (ie, from files, LDAP, NIS, etc) in this file - just use %groupname
+## rather than USERALIAS
+# User_Alias ADMINS = jsmith, mikem
+
+
+## Command Aliases
+## These are groups of related commands...
+
+## Networking
+# Cmnd_Alias NETWORKING = /sbin/route, /sbin/ifconfig, /bin/ping, /sbin/dhclient, /usr/bin/net, /sbin/iptables, /usr/bin/rfcomm, /usr/bin/wvdial, /sbin/iwconfig, /sbin/mii-tool
+
+## Installation and management of software
+# Cmnd_Alias SOFTWARE = /bin/rpm, /usr/bin/up2date, /usr/bin/yum
+
+## Services
+# Cmnd_Alias SERVICES = /sbin/service, /sbin/chkconfig, /usr/bin/systemctl start, /usr/bin/systemctl stop, /usr/bin/systemctl reload, /usr/bin/systemctl restart, /usr/bin/systemctl status, /usr/bin/systemctl enable, /usr/bin/systemctl disable
+
+## Updating the locate database
+# Cmnd_Alias LOCATE = /usr/bin/updatedb
+
+## Storage
+# Cmnd_Alias STORAGE = /sbin/fdisk, /sbin/sfdisk, /sbin/parted, /sbin/partprobe, /bin/mount, /bin/umount
+
+## Delegating permissions
+# Cmnd_Alias DELEGATING = /usr/sbin/visudo, /bin/chown, /bin/chmod, /bin/chgrp
+
+## Processes
+# Cmnd_Alias PROCESSES = /bin/nice, /bin/kill, /usr/bin/kill, /usr/bin/killall
+
+## Drivers
+# Cmnd_Alias DRIVERS = /sbin/modprobe
+
+# Defaults specification
+
+#
+# Refuse to run if unable to disable echo on the tty.
+#
+Defaults   !visiblepw
+
+#
+# Preserving HOME has security implications since many programs
+# use it when searching for configuration files. Note that HOME
+# is already set when the the env_reset option is enabled, so
+# this option is only effective for configurations where either
+# env_reset is disabled or HOME is present in the env_keep list.
+#
+Defaults    always_set_home
+Defaults    match_group_by_gid
+
+# Prior to version 1.8.15, groups listed in sudoers that were not
+# found in the system group database were passed to the group
+# plugin, if any. Starting with 1.8.15, only groups of the form
+# %:group are resolved via the group plugin by default.
+# We enable always_query_group_plugin to restore old behavior.
+# Disable this option for new behavior.
+Defaults    always_query_group_plugin
+
+Defaults    env_reset
+Defaults    env_keep =  "COLORS DISPLAY HOSTNAME HISTSIZE KDEDIR LS_COLORS"
+Defaults    env_keep += "MAIL PS1 PS2 QTDIR USERNAME LANG LC_ADDRESS LC_CTYPE"
+Defaults    env_keep += "LC_COLLATE LC_IDENTIFICATION LC_MEASUREMENT LC_MESSAGES"
+Defaults    env_keep += "LC_MONETARY LC_NAME LC_NUMERIC LC_PAPER LC_TELEPHONE"
+Defaults    env_keep += "LC_TIME LC_ALL LANGUAGE LINGUAS _XKB_CHARSET XAUTHORITY"
+
+#
+# Adding HOME to env_keep may enable a user to run unrestricted
+# commands via sudo.
+#
+# Defaults   env_keep += "HOME"
+
+Defaults    secure_path = /sbin:/bin:/usr/sbin:/usr/bin
+
+## Next comes the main part: which users can run what software on
+## which machines (the sudoers file can be shared between multiple
+## systems).
+## Syntax:
+##
+##      user    MACHINE=COMMANDS
+##
+## The COMMANDS section may have other options added to it.
+##
+## Allow root to run any commands anywhere
+root    ALL=(ALL)       ALL
+
+## Allows members of the 'sys' group to run networking, software,
+## service management apps and more.
+# %sys ALL = NETWORKING, SOFTWARE, SERVICES, STORAGE, DELEGATING, PROCESSES, LOCATE, DRIVERS
+
+## Allows people in group wheel to run all commands
+%wheel  ALL=(ALL)       ALL
+
+## Same thing without a password
+# %wheel        ALL=(ALL)       NOPASSWD: ALL
+
+## Allows members of the users group to mount and unmount the
+## cdrom as root
+# %users  ALL=/sbin/mount /mnt/cdrom, /sbin/umount /mnt/cdrom
+
+## Allows members of the users group to shutdown this system
+# %users  localhost=/sbin/shutdown -h now
+
+## Read drop-in files from /etc/sudoers.d (the # here does not mean a comment)
+#includedir /etc/sudoers.d
+[osboxes@osboxes ~]$ gre sshd /var/log/auth.log | less
+[osboxes@osboxes ~]$ last
+osboxes  pts/0        192.168.31.140   Sat Feb  5 01:25   still logged in
+osboxes  tty1                          Sat Feb  5 01:24   still logged in
+reboot   system boot  4.18.0-305.3.1.e Sat Feb  5 01:23   still running
+osboxes  pts/0        192.168.31.140   Sat Feb  5 01:11 - 01:23  (00:11)
+osboxes  tty1                          Sat Feb  5 01:10 - 01:23  (00:12)
+reboot   system boot  4.18.0-305.3.1.e Sat Feb  5 01:09 - 01:23  (00:13)
+osboxes  pts/0        192.168.31.140   Fri Feb  4 05:04 - crash  (20:04)
+osboxes  tty1                          Fri Feb  4 05:00 - crash  (20:09)
+reboot   system boot  4.18.0-305.3.1.e Fri Feb  4 04:45 - 01:23  (20:37)
+osboxes  pts/0        192.168.31.140   Thu Feb  3 11:22 - crash  (17:23)
+osboxes  tty1                          Thu Feb  3 11:18 - crash  (17:26)
+reboot   system boot  4.18.0-305.3.1.e Thu Feb  3 11:18 - 01:23 (1+14:04)
+osboxes  pts/0        192.168.31.140   Thu Feb  3 11:17 - crash  (00:01)
+osboxes  tty1                          Thu Feb  3 11:10 - crash  (00:07)
+reboot   system boot  4.18.0-305.3.1.e Thu Feb  3 11:09 - 01:23 (1+14:13)
+osboxes  tty1                          Thu Feb  3 11:04 - crash  (00:05)
+reboot   system boot  4.18.0-305.3.1.e Thu Feb  3 11:01 - 01:23 (1+14:21)
+osboxes  tty1                          Thu Feb  3 10:17 - crash  (00:44)
+reboot   system boot  4.18.0-305.3.1.e Thu Feb  3 10:05 - 01:23 (1+15:17)
+osboxes  pts/0        192.168.31.140   Sun Jan 30 10:28 - 10:43  (00:14)
+osboxes  tty2                          Sun Jan 30 09:59 - crash (4+00:06)
+osboxes  pts/0        192.168.31.140   Sun Jan 30 09:53 - 10:06  (00:13)
+osboxes  tty1                          Sun Jan 30 02:30 - crash (4+07:35)
+reboot   system boot  4.18.0-305.3.1.e Sun Jan 30 02:29 - 01:23 (5+22:53)
+osboxes  tty1                          Sun Jan 30 02:26 - crash  (00:03)
+reboot   system boot  4.18.0-305.3.1.e Sun Jan 30 02:22 - 01:23 (5+23:00)
+osboxes  tty1                          Sun Jan 16 09:46 - crash (13+16:36)
+reboot   system boot  4.18.0-305.3.1.e Sun Jan 16 09:42 - 01:23 (19+15:41)
+osboxes  tty1                          Sat Jan 15 12:01 - crash  (21:40)
+reboot   system boot  4.18.0-305.3.1.e Sat Jan 15 11:53 - 01:23 (20+13:29)
+osboxes  tty1                          Sat Jan 15 11:48 - crash  (00:05)
+reboot   system boot  4.18.0-305.3.1.e Sat Jan 15 11:47 - 01:23 (20+13:35)
+osboxes  tty1                          Sat Jan 15 11:23 - crash  (00:23)
+reboot   system boot  4.18.0-305.3.1.e Sat Jan 15 11:23 - 01:23 (20+14:00)
+osboxes  tty1                          Sat Jan 15 02:11 - crash  (09:11)
+reboot   system boot  4.18.0-305.3.1.e Sat Jan 15 02:10 - 01:23 (20+23:12)
+osboxes  tty2                          Sat Jan 15 02:08 - crash  (00:02)
+osboxes  tty1                          Sat Jan 15 01:38 - crash  (00:31)
+reboot   system boot  4.18.0-305.3.1.e Sat Jan 15 01:38 - 01:23 (20+23:45)
+osboxes  tty1                          Sat Jan 15 01:35 - crash  (00:02)
+reboot   system boot  4.18.0-305.3.1.e Sat Jan 15 01:35 - 01:23 (20+23:48)
+osboxes  tty1                          Sat Jan 15 00:35 - crash  (00:59)
+reboot   system boot  4.18.0-305.3.1.e Sat Jan 15 00:34 - 01:23 (21+00:48)
+osboxes  tty2                          Fri Jan 14 23:57 - crash  (00:37)
+osboxes  tty1                          Fri Jan 14 23:55 - crash  (00:38)
+reboot   system boot  4.18.0-305.3.1.e Fri Jan 14 23:54 - 01:23 (21+01:28)
+osboxes  tty6                          Fri Jan 14 12:17 - crash  (11:36)
+osboxes  pts/0        192.168.31.140   Fri Jan 14 12:17 - crash  (11:37)
+osboxes  tty1                          Fri Jan 14 11:42 - crash  (12:11)
+reboot   system boot  4.18.0-305.3.1.e Fri Jan 14 11:39 - 01:23 (21+13:43)
+osboxes  tty1                          Sat Jun 19 11:55 - 11:55  (00:00)
+root     tty1                          Sat Jun 19 11:53 - 11:54  (00:01)
+reboot   system boot  4.18.0-305.3.1.e Sat Jun 19 11:51 - 11:55  (00:03)
+
+wtmp begins Sat Jun 19 11:51:52 2021
+[osboxes@osboxes ~]$ lastlog
+Username         Port     From             Latest
+root             tty1                      Sat Jun 19 11:53:09 -0400 2021
+bin                                        **Never logged in**
+daemon                                     **Never logged in**
+adm                                        **Never logged in**
+lp                                         **Never logged in**
+sync                                       **Never logged in**
+shutdown                                   **Never logged in**
+halt                                       **Never logged in**
+mail                                       **Never logged in**
+operator                                   **Never logged in**
+games                                      **Never logged in**
+ftp                                        **Never logged in**
+nobody                                     **Never logged in**
+dbus                                       **Never logged in**
+systemd-coredump                           **Never logged in**
+systemd-resolve                            **Never logged in**
+tss                                        **Never logged in**
+polkitd                                    **Never logged in**
+libstoragemgmt                             **Never logged in**
+unbound                                    **Never logged in**
+setroubleshoot                             **Never logged in**
+cockpit-ws                                 **Never logged in**
+cockpit-wsinstance                           **Never logged in**
+sssd                                       **Never logged in**
+clevis                                     **Never logged in**
+chrony                                     **Never logged in**
+sshd                                       **Never logged in**
+tcpdump                                    **Never logged in**
+osboxes          pts/0    192.168.31.140   Sat Feb  5 01:25:00 -0500 2022
+[osboxes@osboxes ~]$ sudo hostnamectl set-hostname osbox
+[sudo] password for osboxes:
+[osboxes@osboxes ~]$ ip a
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+    inet6 ::1/128 scope host
+       valid_lft forever preferred_lft forever
+2: enp0s3: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc fq_codel state UP group default qlen 1000
+    link/ether 08:00:27:a0:ff:ec brd ff:ff:ff:ff:ff:ff
+    inet 192.168.31.27/24 brd 192.168.31.255 scope global dynamic noprefixroute enp0s3
+       valid_lft 40653sec preferred_lft 40653sec
+    inet6 fe80::a00:27ff:fea0:ffec/64 scope link noprefixroute
+       valid_lft forever preferred_lft forever
+[osboxes@osboxes ~]$ hostname
+osbox
+[osboxes@osboxes ~]$ sudo hostnamectl set-hostname osboxes
+[sudo] password for osboxes:
+[osboxes@osboxes ~]$ hostname
+osboxes
+[osboxes@osboxes ~]$ timedatectl
+               Local time: Sat 2022-02-05 02:26:36 EST
+           Universal time: Sat 2022-02-05 07:26:36 UTC
+                 RTC time: Sat 2022-02-05 07:26:34
+                Time zone: America/New_York (EST, -0500)
+System clock synchronized: yes
+              NTP service: active
+          RTC in local TZ: no
+[osboxes@osboxes ~]$ timedatectl list-timezones
+Africa/Abidjan
+Africa/Accra
+Africa/Addis_Ababa
+Africa/Algiers
+Africa/Asmara
+Africa/Bamako
+Africa/Bangui
+Africa/Banjul
+Africa/Bissau
+Africa/Blantyre
+Africa/Brazzaville
+Africa/Bujumbura
+Africa/Cairo
+Africa/Casablanca
+Africa/Ceuta
+Africa/Conakry
+Africa/Dakar
+Africa/Dar_es_Salaam
+Africa/Djibouti
+Africa/Douala
+Africa/El_Aaiun
+Africa/Freetown
+Africa/Gaborone
+Africa/Harare
+Africa/Johannesburg
+Africa/Juba
+Africa/Kampala
+Africa/Khartoum
+Africa/Kigali
+Africa/Kinshasa
+Africa/Lagos
+Africa/Libreville
+Africa/Lome
+Africa/Luanda
+Africa/Lubumbashi
+Africa/Lusaka
+Africa/Malabo
+Africa/Maputo
+Africa/Maseru
+Africa/Mbabane
+Africa/Mogadishu
+Africa/Monrovia
+[osboxes@osboxes ~]$ timedatectl list-timezones
+Africa/Abidjan
+Africa/Accra
+Africa/Addis_Ababa
+Africa/Algiers
+Africa/Asmara
+Africa/Bamako
+Africa/Bangui
+Africa/Banjul
+Africa/Bissau
+Africa/Blantyre
+Africa/Brazzaville
+Africa/Bujumbura
+Africa/Cairo
+Africa/Casablanca
+Africa/Ceuta
+Africa/Conakry
+Africa/Dakar
+Africa/Dar_es_Salaam
+Africa/Djibouti
+Africa/Douala
+Africa/El_Aaiun
+Africa/Freetown
+Africa/Gaborone
+Africa/Harare
+Africa/Johannesburg
+Africa/Juba
+Africa/Kampala
+Africa/Khartoum
+Africa/Kigali
+Africa/Kinshasa
+Africa/Lagos
+Africa/Libreville
+Africa/Lome
+Africa/Luanda
+Africa/Lubumbashi
+Africa/Lusaka
+Africa/Malabo
+Africa/Maputo
+Africa/Maseru
+Africa/Mbabane
+Africa/Mogadishu
+Africa/Monrovia
+ ESCOC
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ ESCOD
+Africa/Abidjan
+Africa/Accra
+Africa/Addis_Ababa
+Africa/Algiers
+Africa/Asmara
+Africa/Bamako
+Africa/Bangui
+Africa/Banjul
+Africa/Bissau
+Africa/Blantyre
+Africa/Brazzaville
+Africa/Bujumbura
+Africa/Cairo
+Africa/Casablanca
+Africa/Ceuta
+Africa/Conakry
+Africa/Dakar
+Africa/Dar_es_Salaam
+Africa/Djibouti
+Africa/Douala
+Africa/El_Aaiun
+Africa/Freetown
+Africa/Gaborone
+Africa/Harare
+Africa/Johannesburg
+Africa/Juba
+Africa/Kampala
+Africa/Khartoum
+Africa/Kigali
+Africa/Kinshasa
+Africa/Lagos
+Africa/Libreville
+Africa/Lome
+Africa/Luanda
+Africa/Lubumbashi
+Africa/Lusaka
+Africa/Malabo
+Africa/Maputo
+Africa/Maseru
+Africa/Mbabane
+Africa/Mogadishu
+Africa/Monrovia
+Africa/Nairobi
+Africa/Ndjamena
+Africa/Niamey
+Africa/Nouakchott
+Africa/Ouagadougou
+Africa/Porto-Novo
+Africa/Sao_Tome
+Africa/Tripoli
+Africa/Tunis
+Africa/Windhoek
+America/Adak
+America/Anchorage
+America/Anguilla
+America/Antigua
+America/Araguaina
+America/Argentina/Buenos_Aires
+America/Argentina/Catamarca
+America/Argentina/Cordoba
+America/Argentina/Jujuy
+America/Argentina/La_Rioja
+America/Argentina/Mendoza
+America/Argentina/Rio_Gallegos
+America/Argentina/Salta
+America/Argentina/San_Juan
+America/Argentina/San_Luis
+America/Argentina/Tucuman
+America/Argentina/Ushuaia
+America/Aruba
+America/Asuncion
+America/Atikokan
+America/Bahia
+America/Bahia_Banderas
+America/Barbados
+America/Belem
+America/Belize
+America/Blanc-Sablon
+America/Boa_Vista
+America/Bogota
+America/Boise
+America/Cambridge_Bay
+America/Campo_Grande
+America/Cancun
+America/Caracas
+America/Cayenne
+America/Cayman
+America/Chicago
+America/Chihuahua
+America/Costa_Rica
+America/Creston
+America/Cuiaba
+America/Curacao
+America/Danmarkshavn
+America/Dawson
+America/Dawson_Creek
+America/Denver
+America/Detroit
+America/Dominica
+America/Edmonton
+America/Eirunepe
+America/El_Salvador
+America/Fort_Nelson
+America/Fortaleza
+America/Glace_Bay
+America/Goose_Bay
+America/Grand_Turk
+America/Grenada
+America/Guadeloupe
+America/Guatemala
+America/Guayaquil
+America/Guyana
+America/Halifax
+America/Havana
+America/Hermosillo
+America/Indiana/Indianapolis
+America/Indiana/Knox
+America/Indiana/Marengo
+America/Indiana/Petersburg
+America/Indiana/Tell_City
+America/Indiana/Vevay
+America/Indiana/Vincennes
+America/Indiana/Winamac
+America/Inuvik
+America/Iqaluit
+America/Jamaica
+America/Juneau
+America/Kentucky/Louisville
+America/Kentucky/Monticello
+America/Kralendijk
+America/La_Paz
+America/Lima
+America/Los_Angeles
+America/Lower_Princes
+America/Maceio
+America/Managua
+America/Manaus
+America/Marigot
+America/Martinique
+America/Matamoros
+America/Mazatlan
+America/Menominee
+America/Merida
+America/Metlakatla
+America/Mexico_City
+America/Miquelon
+America/Moncton
+America/Monterrey
+America/Montevideo
+America/Montserrat
+America/Nassau
+America/New_York
+America/Nipigon
+America/Nome
+America/Noronha
+America/North_Dakota/Beulah
+America/North_Dakota/Center
+America/North_Dakota/New_Salem
+America/Nuuk
+America/Ojinaga
+America/Panama
+America/Pangnirtung
+America/Paramaribo
+America/Phoenix
+America/Port-au-Prince
+America/Port_of_Spain
+America/Porto_Velho
+America/Puerto_Rico
+America/Punta_Arenas
+[osboxes@osboxes ~]$ sudo timedatectl set-timezone Australia/Sydney
+[sudo] password for osboxes:
+[osboxes@osboxes ~]$ timedatectl
+               Local time: Sat 2022-02-05 18:29:23 AEDT
+           Universal time: Sat 2022-02-05 07:29:23 UTC
+                 RTC time: Sat 2022-02-05 07:29:22
+                Time zone: Australia/Sydney (AEDT, +1100)
+System clock synchronized: yes
+              NTP service: active
+          RTC in local TZ: no
+[osboxes@osboxes ~]$ sudo timedatectl set-timezone America/New_York
+[osboxes@osboxes ~]$ timedatectl
+               Local time: Sat 2022-02-05 02:30:04 EST
+           Universal time: Sat 2022-02-05 07:30:04 UTC
+                 RTC time: Sat 2022-02-05 07:30:02
+                Time zone: America/New_York (EST, -0500)
+System clock synchronized: yes
+              NTP service: active
+          RTC in local TZ: no
+[osboxes@osboxes ~]$
