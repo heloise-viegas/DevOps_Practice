@@ -24,13 +24,13 @@ Operations performed on Remote Server</br>
 [osboxes@osboxes ]$ sudo reboot<br/>
 Connection to 192.168.85.56 ended by remote host.<br/>
 Connection to 192.168.85.56 ended.<br/>
-heloise@DESKTOP-P5D1DV6:~$ ssh osboxes@192.168.85.56<br/>
+heloise@DESKTOP-P5D1DV6:$ ssh osboxes@192.168.85.56<br/>
 ssh: connect to host 192.168.85.56 port 22: Resource temporarily unavailable<br/>
-heloise@DESKTOP-P5D1DV6:~$ ssh osboxes@192.168.85.56<br/>
+heloise@DESKTOP-P5D1DV6:$ ssh osboxes@192.168.85.56<br/>
 osboxes@192.168.85.56's password:<br/>
 Activate the web console with: systemctl enable --now cockpit.socket<br/>
 Last login: Sat Feb  5 01:24:00 2022<br/>
-[osboxes@osboxes ~]$ uptime<br/>
+[osboxes@osboxes ]$ uptime<br/>
  01:25:12 up 1 min,  2 users,  load average: 0.14, 0.10, 0.04<br/>
  
  **Change server host name**<br/>
