@@ -6,6 +6,8 @@ sudo apt-cache search package</br>
 apt list --installed</br>
 
 2)Service management</br>
+format :    sudo service package operation
+
 ssh</br>
 sudo service ssh status</br>
 sudo service ssh start</br>
@@ -20,6 +22,8 @@ dnf list installed</br>
 
 
 2)Service management</br>
+format :    sudo systemctl operation package 
+
 ssh</br>
 sudo systemctl start sshd</br>
 sudo systemctl status sshd</br>
