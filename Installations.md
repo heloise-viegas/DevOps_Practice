@@ -11,3 +11,7 @@
 curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64</br>
 sudo install minikube-linux-amd64 /usr/local/bin/minikube</br>
 
+#wsl 1 to wsl 2</br>
+![wsl1 to wsl2](https://user-images.githubusercontent.com/37453877/154719014-88410ad5-7c97-4abf-b862-32dc08d126df.PNG)
+
+
