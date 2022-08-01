@@ -25,7 +25,7 @@ VS
   - Container with the required libraries and JS app
 - To scale the app multiple containers are setup each having its own libraries and JS application
 - ADVANTAGE over VM
-  - multiple guest VMs arent required to scale the app
+  - multiple guest OS arent required to scale the app i.e only additional containers are needed
   - the conatiner will run irrespective of the OS
   
   
