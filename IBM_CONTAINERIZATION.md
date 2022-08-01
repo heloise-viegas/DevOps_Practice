@@ -32,7 +32,7 @@ VS
  via VM
  - to reuse the exsisting VMs we can run python on them. Hence each VM will have JS and Python running
  - Drawback : Cant independently scale only JS VM's since VM has both Python and JS.
-   Solution : Free up existing VM and run only Python on it. This is'nt the ideal way in cloud native.
+ - Solution : Free up existing VM and run only Python on it. This is'nt the ideal way in cloud native.
    
  via Container
  - simply add a new container with python 
