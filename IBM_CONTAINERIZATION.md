@@ -18,7 +18,7 @@ VS
   - creat a manifest/YAML file
   - build the imagee
   - run the container. This container contains all the dependencies/binaries/libraries required to run the JS application
-- Structure for VM 
+- Structure for Container
   - Hardware layer
   - Host OS
   - Container Runtime eg. Docker Engine
