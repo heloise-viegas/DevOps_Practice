@@ -35,9 +35,9 @@ VS
    Solution : Free up existing VM and run only Python on it. This is'nt the ideal way in cloud native.
    
  via Container
- - simple add a new container with python 
+ - simply add a new container with python 
  - addtional free resources will be shared by all the running containers
- - if some containers arent using CPU/memeory then these resources are fred so that other containers running on the machine can use them.
+ - if some containers arent using CPU/memeory then these resources are freed so that other containers running on the machine can use them.
  
  ![docker_ibm](https://user-images.githubusercontent.com/37453877/182145646-87265508-3d05-4a47-a1db-1b6775873c16.JPG)
  Resources : https://youtu.be/0qotVMX-J5s
